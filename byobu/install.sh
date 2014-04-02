@@ -17,3 +17,6 @@ for i in $(find * -not -name "*.sh"); do
 
   ln -s ~/dotfiles/byobu/$i ~/.byobu/$i
 done
+
+byobu-select-backend screen
+byobu-launcher-install
