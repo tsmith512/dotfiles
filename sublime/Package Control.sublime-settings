@@ -1,0 +1,24 @@
+{
+	"auto_upgrade_last_run": null,
+	"installed_packages":
+	[
+		"Alignment",
+		"BracketHighlighter",
+		"Code Alignment",
+		"Color Highlighter",
+		"Dayle Rees Color Schemes",
+		"Drupal",
+		"Drupal Completions",
+		"Emmet",
+		"Gist",
+		"LineEndings",
+		"Package Control",
+		"Sass",
+		"SFTP",
+		"Theme - Flatland",
+		"Theme - Soda",
+		"TidyHTML5",
+		"TrailingSpaces",
+		"Wordpress"
+	]
+}

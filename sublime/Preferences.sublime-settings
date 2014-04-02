@@ -1,0 +1,24 @@
+{
+	"color_scheme": "Packages/Theme - Flatland/Flatland Dark.tmTheme",
+	"default_line_ending": "unix",
+	"dictionary": "Packages/Language - English/en_US.dic",
+	"font_face": "Consolas",
+	"font_size": 11,
+	"highlight_line": true,
+	"hot_exit": false,
+	"ignored_packages":
+	[
+		"Vintage"
+	],
+	"open_files_in_new_window": false,
+	"remember_open_files": false,
+	"rulers":
+	[
+		80,
+		120
+	],
+	"spell_check": true,
+	"tab_size": 2,
+	"theme": "Flatland Dark.sublime-theme",
+	"translate_tabs_to_spaces": true
+}
