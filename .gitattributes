@@ -2,5 +2,8 @@
 *.bat text eol=crlf
 *.ps1 text eol=crlf
 
-# *nix/Application Files
+# Linux Files
+*.sh text eol=lf
+
+# Application Files
 *.sublime-settings text eol=lf
