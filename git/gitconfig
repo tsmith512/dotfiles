@@ -2,6 +2,10 @@
   name = Taylor Smith
   email = tsmith@tsmithcreative.com
 
+[core]
+  editor = emacs
+  excludesfile = ~/.gitignore_global
+
 [color]
   ui = auto
 
@@ -39,5 +43,5 @@
   # Show files ignored by git:
   ign = clean -dXn
 
-[core]
-  editor = emacs
+[mergetool]
+  keepBackup = false
