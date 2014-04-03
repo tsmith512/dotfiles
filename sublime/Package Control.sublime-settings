@@ -11,7 +11,10 @@
 		"Drupal Completions",
 		"Emmet",
 		"Gist",
+		"GitGutter",
+		"IndentGuides",
 		"LineEndings",
+		"Markdown Preview",
 		"Package Control",
 		"Sass",
 		"SFTP",
@@ -19,6 +22,7 @@
 		"Theme - Soda",
 		"TidyHTML5",
 		"TrailingSpaces",
-		"Wordpress"
+		"Wordpress",
+		"Wrap Plus"
 	]
 }
