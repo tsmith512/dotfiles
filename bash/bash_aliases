@@ -13,4 +13,6 @@ alias ll='ls -alF'
 alias la='ls -A'
 
 # Find in files and output in color to less
-function gr() { grep -srnH --color=always "$@" . | less -R }
+function gr() {
+  grep -srnH --color=always "$@" . | less -R;
+}

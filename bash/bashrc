@@ -59,14 +59,15 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# {{{
-# Node Completion - Auto-generated, do not touch.
+
+# Node Completion - Adapted from auto-generated snippet
 shopt -s progcomp
-for f in $(command ls ~/.node-completion); do
-  f="$HOME/.node-completion/$f"
-  test -f "$f" && . "$f"
-done
-# }}}
+if [ -f ~/.node-completion ]; then
+  for f in $(command ls ~/.node-completion); do
+    f="$HOME/.node-completion/$f"
+    test -f "$f" && . "$f"
+  done
+fi
 
 # WP-CLI directory
 export PATH=~/.wp-cli/bin:$PATH
