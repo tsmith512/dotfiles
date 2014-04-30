@@ -4,6 +4,7 @@
 
 # Linux Files
 *.sh text eol=lf
+bash/* text eol=lf
 
 # Application Files
 *.sublime-settings text eol=lf
