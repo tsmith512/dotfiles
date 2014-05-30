@@ -39,6 +39,9 @@
   lg = log -p
   ls = ls-files
   rhh = reset --hard HEAD
+  mt = mergetool --tool=emerge
+  ff = merge --ff-only
+  m = merge --no-ff
 
   # Show files ignored by git:
   ign = clean -dXn
