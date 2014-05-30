@@ -3,13 +3,11 @@
 	"installed_packages":
 	[
 		"Alignment",
-		"Behat",
 		"BracketHighlighter",
 		"Code Alignment",
 		"Color Highlighter",
 		"Dayle Rees Color Schemes",
 		"Drupal",
-		"Drupal Completions",
 		"Drupal Snippets",
 		"Emmet",
 		"Emmet Css Snippets",
@@ -24,11 +22,8 @@
 		"Sass",
 		"SCSS",
 		"SFTP",
-		"Theme - Flatland",
 		"Theme - Soda",
-		"TidyHTML5",
 		"TrailingSpaces",
-		"Whitespaces",
 		"WordPress",
 		"Wrap Plus"
 	]

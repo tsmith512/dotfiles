@@ -9,13 +9,11 @@
 	"font_options":
 	[
 	],
-	"font_size": 10,
+	"font_size": 11,
 	"highlight_line": true,
 	"hot_exit": false,
 	"ignored_packages":
 	[
-		"Theme - Flatland",
-		"Gist",
 		"Sass",
 		"Drupal",
 		"Vintage",
