@@ -16,3 +16,6 @@ $(dirname $0)/git/install.sh
 
 echo -- Installing Byobu Settings
 $(dirname $0)/byobu/install.sh
+
+echo -- Installing Emacs Settings
+$(dirname $0)/emacs/install.sh

@@ -1,0 +1,14 @@
+(global-font-lock-mode 1)
+
+(add-to-list 'load-path (expand-file-name "~/.emacs.d"))
+
+(autoload 'php-mode "php-mode")
+(setq auto-mode-alist
+  (append '(("\.php$" . php-mode)
+            ("\.module$" . php-mode)
+	    ("\.install$" . php-mode))
+              auto-mode-alist))
+
+(autoload 'scss-mode "scss-mode")
+(add-to-list 'auto-mode-alist '("\\.scss\\'" . scss-mode))
+(setq scss-compile-at-save nil)
