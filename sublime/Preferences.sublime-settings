@@ -14,12 +14,8 @@
 	"hot_exit": false,
 	"ignored_packages":
 	[
-		"Sass",
-		"Drupal",
 		"Vintage",
-		"GitGutter",
-		"Dayle Rees Color Schemes",
-		"Markdown Preview"
+		"GitGutter"
 	],
 	"open_files_in_new_window": false,
 	"remember_open_files": false,
