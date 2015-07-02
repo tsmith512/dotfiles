@@ -8,6 +8,7 @@
 
 [color]
   ui = auto
+  interactive = true
 
 [color "branch"]
   current = yellow reverse
@@ -45,6 +46,9 @@
 
   # Show files ignored by git:
   ign = clean -dXn
+	ai = add -i
 
 [mergetool]
   keepBackup = false
+[interactive]
+	singlekey = 1
