@@ -47,6 +47,7 @@
   # Show files ignored by git:
   ign = clean -dXn
 
+  cs = commit -S
 [mergetool]
   keepBackup = false
 
