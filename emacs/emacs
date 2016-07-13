@@ -5,6 +5,7 @@
 (autoload 'php-mode "php-mode")
 (setq auto-mode-alist
   (append '(("\.php$" . php-mode)
+            ("\.theme$" . php-mode)
             ("\.module$" . php-mode)
 	    ("\.install$" . php-mode))
               auto-mode-alist))
