@@ -42,6 +42,7 @@
   mt = mergetool --tool=emerge
   ff = merge --ff-only
   m = merge --no-ff
+  cs = commit -S
 
   # Show files ignored by git:
   ign = clean -dXn
@@ -49,3 +50,6 @@
   cs = commit -S
 [mergetool]
   keepBackup = false
+
+[commit]
+  gpgsign = true
