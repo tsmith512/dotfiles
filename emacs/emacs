@@ -15,3 +15,8 @@
 (setq scss-compile-at-save nil)
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 2)
+(electric-indent-mode -1)
+(setq tab-stop-list (number-sequence 2 100 2))
+(define-key global-map [select] 'end-of-line)
+(setq require-final-newline t)
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
