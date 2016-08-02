@@ -1,22 +1,38 @@
 (global-font-lock-mode 1)
 
+; @TODO: Why did I put this here? Emacs complains about it.
 (add-to-list 'load-path (expand-file-name "~/.emacs.d"))
 
+; PHP setup
 (autoload 'php-mode "php-mode")
 (setq auto-mode-alist
   (append '(("\.php$" . php-mode)
             ("\.theme$" . php-mode)
             ("\.module$" . php-mode)
-	    ("\.install$" . php-mode))
+            ("\.install$" . php-mode))
               auto-mode-alist))
 
+; Sass setup
 (autoload 'scss-mode "scss-mode")
 (add-to-list 'auto-mode-alist '("\\.scss\\'" . scss-mode))
 (setq scss-compile-at-save nil)
+
+; Indentation setup (2 spaces for all files by default)
+(electric-indent-mode -1)
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 2)
-(electric-indent-mode -1)
 (setq tab-stop-list (number-sequence 2 100 2))
-(define-key global-map [select] 'end-of-line)
+
+; Whitespace setup (newline at end of file, no trailing whitespace)
 (setq require-final-newline t)
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
+
+; Custom keybindings (including workarounds for PuTTY)
+(define-key global-map [select] 'end-of-line)
+(define-key input-decode-map "\e\eOA" [(meta up)])
+(define-key input-decode-map "\e\eOB" [(meta down)])
+(define-key global-map [(meta up)] 'scroll-down-line)
+(define-key global-map [(meta down)] 'scroll-up-line)
+
+; Other things
+(setq column-number-mode t)
