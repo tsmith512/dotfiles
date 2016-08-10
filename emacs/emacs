@@ -9,6 +9,7 @@
   (append '(("\.php$" . php-mode)
             ("\.theme$" . php-mode)
             ("\.module$" . php-mode)
+            ("\.inc$" . php-mode)
             ("\.install$" . php-mode))
               auto-mode-alist))
 
