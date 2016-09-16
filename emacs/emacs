@@ -13,6 +13,20 @@
             ("\.install$" . php-mode))
               auto-mode-alist))
 
+; Fix PHP indentation of arrays because lining up arrays was terrible
+; See: https://www.emacswiki.org/emacs/PhpMode#toc18
+(add-hook 'php-mode-hook (lambda ()
+  (defun ywb-php-lineup-arglist-intro (langelem)
+  (save-excursion
+    (goto-char (cdr langelem))
+    (vector (+ (current-column) c-basic-offset))))
+  (defun ywb-php-lineup-arglist-close (langelem)
+    (save-excursion
+      (goto-char (cdr langelem))
+      (vector (current-column))))
+  (c-set-offset 'arglist-intro 'ywb-php-lineup-arglist-intro)
+  (c-set-offset 'arglist-close 'ywb-php-lineup-arglist-close)))
+
 ; Sass setup
 (autoload 'scss-mode "scss-mode")
 (add-to-list 'auto-mode-alist '("\\.scss\\'" . scss-mode))
