@@ -16,7 +16,7 @@ __powerline() {
     readonly PS_SYMBOL_DARWIN=''
     readonly PS_SYMBOL_LINUX='$'
     readonly PS_SYMBOL_OTHER='%'
-    readonly GIT_BRANCH_SYMBOL='•'
+    readonly GIT_BRANCH_SYMBOL=':'
     readonly GIT_BRANCH_CHANGED_SYMBOL='+'
     readonly GIT_NEED_PUSH_SYMBOL='↑'
     readonly GIT_NEED_PULL_SYMBOL='↓'
@@ -88,7 +88,7 @@ __powerline() {
         local marks
 
         # branch is modified?
-        [ -n "$($git_eng status --porcelain)" ] && marks+=" $GIT_BRANCH_CHANGED_SYMBOL "
+        [ -n "$($git_eng status --porcelain)" ] && marks+="$GIT_BRANCH_CHANGED_SYMBOL"
 
         # how many commits local branch is ahead/behind of remote?
         local stat="$($git_eng status --porcelain --branch | grep '^##' | grep -o '\[.\+\]$')"
@@ -98,7 +98,7 @@ __powerline() {
         [ -n "$behindN" ] && marks+=" $GIT_NEED_PULL_SYMBOL$behindN"
 
         # print the git branch segment without a trailing newline
-        printf "[$repo $GIT_BRANCH_SYMBOL$branch$marks]"
+        printf "[$repo$GIT_BRANCH_SYMBOL$branch$marks]"
     }
 
     ps1() {
