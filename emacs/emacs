@@ -31,6 +31,7 @@
 (autoload 'scss-mode "scss-mode")
 (add-to-list 'auto-mode-alist '("\\.scss\\'" . scss-mode))
 (setq scss-compile-at-save nil)
+(setq css-indent-offset 2)
 
 ; Indentation setup (2 spaces for all files by default)
 (electric-indent-mode -1)
