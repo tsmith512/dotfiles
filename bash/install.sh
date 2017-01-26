@@ -9,17 +9,13 @@
 
 cd ${0%/*}
 
-if [ ! -f ~/bin/vcprompt ]; then
-  echo -- -- Downloading Version Control Prompt
-  mkdir -p ~/bin
-  curl -Lo ~/bin/vcprompt https://github.com/djl/vcprompt/raw/master/bin/vcprompt
-  chmod 755 ~/bin/vcprompt
-fi
+# There's gotta be a better way to do this, but bash would not
+# follow symlinks or allow for the "~" alias when sourcing the
+# config, so we're chaining scripts together here
 
-for i in $(find * -not -name "*.sh"); do
-  if [ -f ~/.$i ]; then
-    mv ~/.$i ~/.$i.$(date +%Y%m%d-%H%M).backup
-  fi
+DIRNAME=$(pwd)
+HOMEDIR=$(cd && pwd)
 
-  ln -s ~/dotfiles/bash/$i ~/.$i
-done
+echo "" >> $DIRNAME/.bashrc
+echo "source $DIRNAME/bashrc" >> $HOMEDIR/.bashrc
+echo "" >> $DIRNAME/.bashrc
