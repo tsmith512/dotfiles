@@ -2,7 +2,7 @@
 
 ; Package Manager with MELPA
 (require 'package)
-  (setq package-list '(monokai-theme php-mode scss-mode))
+  (setq package-list '(monokai-theme php-mode scss-mode markdown-mode))
 
   (add-to-list 'package-archives
                '("melpa" . "https://melpa.org/packages/"))
