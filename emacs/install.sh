@@ -14,6 +14,6 @@ for i in "${files[@]}"; do
   if [ -e ~/.$i ]; then
     mv ~/.$i ~/.$i.$(date +%Y%m%d-%H%M).backup
   fi
-
-  ln -s ~/dotfiles/emacs/$i ~/.$i
 done
+
+ln -s ~/dotfiles/emacs/emacs.d ~/.emacs.d
