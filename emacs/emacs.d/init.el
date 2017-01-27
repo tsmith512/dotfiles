@@ -1,6 +1,13 @@
 ; Package Manager with MELPA
 (require 'package)
-  (setq package-list '(monokai-theme php-mode scss-mode markdown-mode))
+  (setq package-list '(monokai-theme
+                       php-mode
+                       scss-mode
+                       smart-mode-line
+                       markdown-mode
+                       popwin
+                       direx
+                       ))
 
   (add-to-list 'package-archives
                '("melpa" . "https://melpa.org/packages/"))
@@ -18,12 +25,24 @@
   (unless (package-installed-p package)
     (package-install package)))
 
-(add-hook 'after-init-hook (lambda () (load-theme 'monokai t)))
-
 ; General / Appearance
+(add-hook 'after-init-hook (lambda () (load-theme 'monokai t)))
 (global-font-lock-mode 1)
 (when (fboundp 'menu-bar-mode) (menu-bar-mode -1))
 (setq column-number-mode t)
+
+(setq sml/no-confirm-load-theme t)
+(setq sml/theme 'dark)
+(sml/setup)
+
+; Tool setup
+(require 'popwin)
+(popwin-mode 1)
+
+(require 'direx)
+(push '(direx:direx-mode :position left :width 25 :dedicated t)
+      popwin:special-display-config)
+(global-set-key (kbd "C-x C-j") 'direx:jump-to-directory-other-window)
 
 ; Indentation setup (2 spaces for all files by default)
 (electric-indent-mode -1)
@@ -41,6 +60,7 @@
 (define-key input-decode-map "\e\eOB" [(meta down)])
 (define-key global-map [(meta up)] 'scroll-down-line)
 (define-key global-map [(meta down)] 'scroll-up-line)
+
 
 ; PHP setup
 (require 'php-mode)
