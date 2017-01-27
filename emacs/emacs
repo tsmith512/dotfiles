@@ -1,10 +1,29 @@
 (global-font-lock-mode 1)
 
-; @TODO: Why did I put this here? Emacs complains about it.
-(add-to-list 'load-path (expand-file-name "~/.emacs.d"))
+; Package Manager with MELPA
+(require 'package)
+  (setq package-list '(monokai-theme php-mode scss-mode))
+
+  (add-to-list 'package-archives
+               '("melpa" . "https://melpa.org/packages/"))
+
+  ;; For important compatibility libraries like cl-lib
+  (when (< emacs-major-version 24)
+    (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/")))
+(package-initialize)
+
+
+(unless package-archive-contents
+  (package-refresh-contents))
+
+(dolist (package package-list)
+  (unless (package-installed-p package)
+    (package-install package)))
+
+(add-hook 'after-init-hook (lambda () (load-theme 'monokai t)))
 
 ; PHP setup
-(autoload 'php-mode "php-mode")
+(require 'php-mode)
 (setq auto-mode-alist
   (append '(("\.php$" . php-mode)
             ("\.theme$" . php-mode)
@@ -28,7 +47,7 @@
   (c-set-offset 'arglist-close 'ywb-php-lineup-arglist-close)))
 
 ; Sass setup
-(autoload 'scss-mode "scss-mode")
+(require 'scss-mode)
 (add-to-list 'auto-mode-alist '("\\.scss\\'" . scss-mode))
 (setq scss-compile-at-save nil)
 (setq css-indent-offset 2)
