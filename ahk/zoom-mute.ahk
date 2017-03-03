@@ -8,8 +8,8 @@ F9::
    ; Get the current window
    WinGet, active_window, ID, A
    ;
-   ; Get a video/screenshare in a window
-   WinGet, zoom_window, ID, ahk_class ZPContentViewWndClass
+   ; Get it working when sharing a screen (WndClass is the window view)
+   WinGet, zoom_window, ID, ahk_class ZPFloatToolbarClass ; ZPContentViewWndClass
    WinActivate, ahk_id %zoom_window%
    ;
    ; Toggle Mute
