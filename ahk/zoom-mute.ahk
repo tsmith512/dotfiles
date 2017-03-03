@@ -1,4 +1,5 @@
 ﻿; A system-wide mute toggle for Zoom Meetings.
+; For auto-start, paste shortcut into C:\Users\[username]\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
 
 F9::
    ; Zoom appears not to accept ControlSend when in the background, so
