@@ -8,8 +8,15 @@ F9::
    ; Get the current window
    WinGet, active_window, ID, A
    ;
-   ; Get it working when sharing a screen (WndClass is the window view)
-   WinGet, zoom_window, ID, ahk_class ZPFloatToolbarClass ; ZPContentViewWndClass
+   ; First check if we're sharing our screen and capture the toolbar:
+   zoom_window := WinExist("ahk_class ZPFloatToolbarClass")
+   ;
+   ; If we aren't sharing our screen, pull the Zoom window:
+   if (zoom_window = "0x0") {
+      WinGet, zoom_window, ID, ahk_class ZPContentViewWndClass
+   }
+   ;
+   ; Whichever we have, switch over to it:
    WinActivate, ahk_id %zoom_window%
    ;
    ; Toggle Mute
